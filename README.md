@@ -33,9 +33,11 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+https://youtu.be/U-lCnAnbIVc
 
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
+[![SimpleTweet](http://img.youtube.com/vi/U-lCnAnbIVc/0.jpg)](http://www.youtube.com/watch?v=U-lCnAnbIVc)
+
 
 ## Notes
 
@@ -43,7 +45,8 @@ Describe any challenges encountered while building the app.
 The difficulties I had with the app is ensuring that I'm use the exact text for the Json. Additonally small issues with the screen 
 overlapping in order to fix the problem that it had. I had problem when using parcels to create the other activity. The emulator is 
 still slow by I increase the ram, vm, and storage but it do much of a change. I had difficulties recording the gif for this assignment
-and i had github issue due to video size as well. 
+and I had github issue due to video size as well. I tried to make the video short but my emulator speed wouldn't allow me to get the
+right timing. I recorded on my phone and hosted the video on youtube. 
 
 ## Open-source libraries used
 
