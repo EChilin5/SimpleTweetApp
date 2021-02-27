@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SimpleTweet </string>
+    <string name="UserName">EdgarChilin</string>
+    <string name="screenName">/@ChilinEdgar</string>
+    <string name="avatarImage">Sample Image</string>
+    <string name="fullAvatarImage">Sample Profile Image</string>
+    <string name="tweet">My first tweet</string>
+    <string name="retweet">Retweet Count</string>
+    <string name="likes">Likes</string>
+
+    <string name="sampleTime">5hr</string>
+    <string name="login_label">Log in</string>
+    <string name="intent_scheme">oauth</string>
+    <string name="intent_host">cprest</string>
+
+</resources>
