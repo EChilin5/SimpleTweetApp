@@ -9,7 +9,11 @@
     <string name="tweet">My first tweet</string>
     <string name="retweet">Retweet Count</string>
     <string name="likes">Likes</string>
+    <string name="editText">What\'s happening</string>
+    <string name="editTextDescription">What\'s happening</string>
 
+    <string name="multilineDescription">Tweet holder</string>
+    <string name="TweetText">Tweet</string>
     <string name="sampleTime">5hr</string>
     <string name="login_label">Log in</string>
     <string name="intent_scheme">oauth</string>

@@ -1,5 +1,13 @@
 package com.codepath.apps.restclienttemplate.models;
 
+import android.provider.ContactsContract;
+
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
 import com.codepath.apps.restclienttemplate.TimeFormatter;
 
 import org.json.JSONArray;
@@ -10,14 +18,30 @@ import org.parceler.Parcel;
 import java.util.ArrayList;
 import java.util.List;
 @Parcel
+@Entity(foreignKeys = @ForeignKey(entity = User.class , parentColumns = "id", childColumns = "userId"))
 public class Tweet {
-    public String body;
-    public String createdAt;
+
+    @ColumnInfo
+    @PrimaryKey
     public long id;
-    public User user;
+
+    @ColumnInfo
+    public String body;
+
+    @ColumnInfo
+    public String createdAt;
+
+    @ColumnInfo
     public int retweet;
+
+    @ColumnInfo
     public int favorites;
 
+    @ColumnInfo
+    public long userId;
+
+    @Ignore
+    public User user;
     // empty constructor needed by the Parceler library
 
     public Tweet(){
@@ -29,9 +53,11 @@ public class Tweet {
         tweet.body = jsonObject.getString("text");
         tweet.id = jsonObject.getLong("id");
         tweet.createdAt = jsonObject.getString("created_at");
-        tweet.user = User.fromJson(jsonObject.getJSONObject("user"));
         tweet.retweet = jsonObject.getInt("retweet_count");
         tweet.favorites = jsonObject.getInt("favorite_count");
+        User user = User.fromJson(jsonObject.getJSONObject("user"));
+        tweet.user = user;
+        tweet.userId = user.id;
         return tweet;
     }
 
