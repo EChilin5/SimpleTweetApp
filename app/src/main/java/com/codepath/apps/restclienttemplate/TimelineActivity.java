@@ -13,6 +13,7 @@ import android.os.Parcel;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import com.codepath.apps.restclienttemplate.models.TweetWithUser;
 import com.codepath.apps.restclienttemplate.models.User;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.github.scribejava.apis.TwitterApi;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -44,6 +46,8 @@ public class TimelineActivity extends AppCompatActivity {
     TweetAdapter adapter;
     SwipeRefreshLayout swipeContainer;
     EndlessRecyclerViewScrollListener scrollListener;
+    FloatingActionButton floatBTNCompose;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +59,19 @@ public class TimelineActivity extends AppCompatActivity {
 
         client = TwitterApp.getRestClient(this);
         tweetDao = ((TwitterApp) getApplicationContext()).getMyDatabase().tweetDao();
+        floatBTNCompose = findViewById(R.id.ComposeNewMessage);
+        floatBTNCompose.bringToFront();
 
+        floatBTNCompose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(TimelineActivity.this, ComposeActivity.class);
+                startActivityForResult(i, REQUEST_CODE);
+            }
+        });
 
         swipeContainer = findViewById(R.id.swipeContainer);
+
         // Configure the refreshing colors
         swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
                 android.R.color.holo_green_light,
@@ -73,6 +87,8 @@ public class TimelineActivity extends AppCompatActivity {
         });
         // find the recycler view
         rvTweets = findViewById(R.id.rvTweets);
+
+
         //init the list of tweets and adapter
         tweets =new ArrayList<>();
         adapter = new TweetAdapter(this, tweets);

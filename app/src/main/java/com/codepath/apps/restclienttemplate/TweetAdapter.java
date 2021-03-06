@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.codepath.apps.restclienttemplate.models.Tweet;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.parceler.Parcels;
 
@@ -25,6 +26,7 @@ import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
     Context context;
     List<Tweet> tweets;
+
 
     //pass in the context and list of tweets
     public TweetAdapter(Context context, List<Tweet> tweets) {
@@ -84,6 +86,7 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
             tvDate = itemView.findViewById(R.id.tvDate);
             tvUser = itemView.findViewById(R.id.tvUserName);
             container = itemView.findViewById(R.id.container);
+
 
         }
 
