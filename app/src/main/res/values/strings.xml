@@ -18,5 +18,6 @@
     <string name="intent_scheme">oauth</string>
     <string name="intent_host">cprest</string>
     <string name="todo">TODO</string>
+    <string name="add_tweet">Add Tweet</string>
 
 </resources>
